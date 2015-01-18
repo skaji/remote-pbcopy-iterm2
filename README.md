@@ -27,7 +27,7 @@ And make sure to check "Allow clipboard access to terminal apps" in iTerm2 Prefe
 
 ## Usage
 
-Just as the ordinal `pbcopy`:
+Just like the normal `pbcopy`:
 
     [remote] $ data | pbcopy
 
