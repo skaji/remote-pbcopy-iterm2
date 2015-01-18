@@ -19,8 +19,10 @@ my $format = sub {
     if (my $tmux = $ENV{TMUX}) {
         # check tmux -CC
         (undef, my $pid) = split /,/, $tmux, 3;
-        if ($pid and open my $fh, "<", "/proc/$pid/cmdline") { # works only in linux
-            (undef, my $option) = split /\0/, scalar(<$fh>), 3;
+        if ($pid) {
+            my $ps = `ps -p $pid -o command= 2>/dev/null` || "";
+            chomp $ps;
+            (undef, my $option) = split /\s+/, $ps, 3;
             if ($option && $option eq "-CC") {
                 return $format{normal};
             }
