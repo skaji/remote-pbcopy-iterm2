@@ -1,0 +1,67 @@
+#!/usr/bin/env perl
+use strict;
+use warnings;
+use MIME::Base64 qw(encode_base64);
+
+my $input = do { local $/; <> } || "";
+$input =~ s/\n+\z//sm;
+$input or exit;
+
+my $b = "\\"; # 1 backslash, not 2
+# escape sequences taken from http://qiita.com/kefir_/items/515ed5264fce40dec522
+my %format = (
+    normal => "\e]52;;%s\e$b",
+    tmux   => "\ePtmux;\e\e]52;;%s\e\e$b$b\e$b",
+    screen => "\eP\e]52;;%s\x07\e$b",
+);
+
+my $format = sub {
+    if (my $tmux = $ENV{TMUX}) {
+        # check tmux -CC
+        (undef, my $pid) = split /,/, $tmux, 3;
+        if ($pid and open my $fh, "<", "/proc/$pid/cmdline") { # works only in linux
+            (undef, my $option) = split /\0/, scalar(<$fh>), 3;
+            if ($option && $option eq "-CC") {
+                return $format{normal};
+            }
+        }
+        $format{tmux};
+    } elsif ( ($ENV{TERM} || "") eq "screen" ) {
+        $format{screen};
+    } else {
+        $format{normal};
+    }
+}->();
+
+printf $format, encode_base64($input, "");
+
+__END__
+
+=head1 NAME
+
+pbcopy - remote pbcopy for iTerm2
+
+=head1 SYNOPSIS
+
+    [remote] $ echo "copy to clipboard from remote!" | pbcopy
+
+    [local] $ pbcopy
+    copy to clipboard from remote!
+
+=head1 SEE ALSO
+
+=over 4
+
+=item * http://doda.b.sourceforge.jp/2011/12/15/tmux-set-clipboard/
+
+=item * http://qiita.com/kefir_/items/1f635fe66b778932e278
+
+=item * http://qiita.com/kefir_/items/515ed5264fce40dec522
+
+=back
+
+=head1 AUTHOR
+
+Shoichi Kaji
+
+=cut
