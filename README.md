@@ -13,7 +13,7 @@ I prepared a simple perl script that is "pbcopy" for remote machines.
 First install the iTerm2 which
 [removes the limit for OSC 52](https://code.google.com/p/iterm2/issues/detail?id=1428) from:
 
-http://iterm2.com/downloads.html (maybe naightly builds)
+http://iterm2.com/downloads/nightly/#/section/home (iTerm2-2_9_20150108-nightly.zip or above)
 
 Then just copy `pbcopy` to a directory where `$PATH` is set.
 
