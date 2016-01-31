@@ -11,9 +11,9 @@ I prepared a simple perl script that is "pbcopy" for remote machines.
 ## Install
 
 First install the iTerm2 which
-[removes the limit for OSC 52](https://code.google.com/p/iterm2/issues/detail?id=1428) from:
+[removes the limit for OSC 52](https://github.com/gnachman/iTerm2/commit/9afa15e199b53d06ffaf18fc28b56d45ff722d19) from:
 
-http://iterm2.com/downloads/nightly/#/section/home (iTerm2-2_9_20150108-nightly.zip or above)
+https://www.iterm2.com/downloads.html (maybe Test Releases or Nightly Builds)
 
 Then just copy `pbcopy` to a directory where `$PATH` is set.
 
@@ -33,6 +33,17 @@ Just like the normal `pbcopy`:
 
     [local] $ pbpaste
     Sun Jan 18 20:28:03 JST 2015
+
+## How about `pbpaste`?
+
+Currently iTerm2 does not allow OSC 52 read access for security reasons.
+But we can just use command+V key for paste content from clipboard.
+
+If you want to save the content of clipboard to a remote file, try this:
+
+    [remote] cat > out.txt
+    # press command+V to paste content of clipboard,
+    # and press contorol+D which indicats EOF
 
 ## See also
 
