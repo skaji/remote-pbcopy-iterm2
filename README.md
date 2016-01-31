@@ -6,7 +6,7 @@ It's very useful, but available only in your local machine, not in remote machin
 Fortunately, with OSC52 escape sequence,
 we can access the local machine clipboard via a remote machine.
 
-I prepared a simple perl script that is "pbcopy" for remote machines.
+I prepared a simple perl script that is `pbcopy` for remote machines.
 
 ## Install
 
@@ -57,6 +57,6 @@ For OSC52
 
 Shoichi Kaji
 
-# License
+## License
 
 This software is licensed under the same terms as Perl.
