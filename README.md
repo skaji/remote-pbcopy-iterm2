@@ -60,3 +60,7 @@ For iTerm2's "The issue with OSC 52 only reading the first 1024 chars has been f
 ## Author
 
 Shoichi Kaji
+
+# License
+
+This software is licensed under the same terms as Perl.
