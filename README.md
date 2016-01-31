@@ -37,13 +37,13 @@ Just like the normal `pbcopy`:
 ## How about `pbpaste`?
 
 Currently iTerm2 does not allow OSC 52 read access for security reasons.
-But we can just use command+V key for paste content from clipboard.
+But we can just use command+V key to paste content from clipboard.
 
 If you want to save the content of clipboard to a remote file, try this:
 
     [remote] cat > out.txt
     # press command+V to paste content of clipboard,
-    # and press contorol+D which indicats EOF
+    # and press control+D which indicats EOF
 
 ## See also
 
@@ -52,10 +52,6 @@ For OSC52
 * http://doda.b.sourceforge.jp/2011/12/15/tmux-set-clipboard/
 * http://qiita.com/kefir_/items/1f635fe66b778932e278
 * http://qiita.com/kefir_/items/515ed5264fce40dec522
-
-For iTerm2's "The issue with OSC 52 only reading the first 1024 chars has been fixed":
-
-* https://code.google.com/p/iterm2/issues/detail?id=1428
 
 ## Author
 
