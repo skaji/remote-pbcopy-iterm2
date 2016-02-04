@@ -17,13 +17,13 @@ https://www.iterm2.com/downloads.html (maybe Test Releases or Nightly Builds)
 
 Then just copy `pbcopy` to a directory where `$PATH` is set.
 
-    [remote] $ wget https://raw.githubusercontent.com/shoichikaji/remote-pbcopy-iterm2/master/pbcopy
+    [remote] $ wget https://raw.githubusercontent.com/skaji/remote-pbcopy-iterm2/master/pbcopy
     [remote] $ chmod +x pbcopy
     [remote] $ mv pbcopy /path/to/bin/
 
 And make sure to check "Allow clipboard access to terminal apps" in iTerm2 Preferences:
 
-![preferences.png](https://raw.githubusercontent.com/shoichikaji/remote-pbcopy-iterm2/master/misc/preferences.png)
+![preferences.png](https://raw.githubusercontent.com/skaji/remote-pbcopy-iterm2/master/misc/preferences.png)
 
 ## Usage
 
