@@ -22,8 +22,8 @@ my $format = sub {
         if ($pid) {
             my $ps = `ps -p $pid -o command= 2>/dev/null` || "";
             chomp $ps;
-            (undef, my $option) = split /\s+/, $ps, 3;
-            if ($option && $option eq "-CC") {
+            (undef, my @option) = split /\s+/, $ps;
+            if (grep { $_ eq "-CC" } @option) {
                 return $format{normal};
             }
         }
