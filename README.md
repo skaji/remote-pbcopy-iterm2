@@ -10,20 +10,16 @@ I prepared a simple perl script that is `pbcopy` for remote machines.
 
 ## Install
 
-First install the iTerm2 which
-[removes the limit for OSC 52](https://github.com/gnachman/iTerm2/commit/9afa15e199b53d06ffaf18fc28b56d45ff722d19) from:
+1. First, make sure you use iTerm2 version 3.0.0 or later.
+2. Copy `pbcopy` to a directory where `$PATH` is set.
 
-https://www.iterm2.com/downloads.html (maybe Test Releases or Nightly Builds)
+       [remote] $ wget https://raw.githubusercontent.com/skaji/remote-pbcopy-iterm2/master/pbcopy
+       [remote] $ chmod +x pbcopy
+       [remote] $ mv pbcopy /path/to/bin/
 
-Then just copy `pbcopy` to a directory where `$PATH` is set.
+3. Check "Allow clipboard access to terminal apps" in iTerm2 Preferences:
 
-    [remote] $ wget https://raw.githubusercontent.com/skaji/remote-pbcopy-iterm2/master/pbcopy
-    [remote] $ chmod +x pbcopy
-    [remote] $ mv pbcopy /path/to/bin/
-
-And make sure to check "Allow clipboard access to terminal apps" in iTerm2 Preferences:
-
-![preferences.png](https://raw.githubusercontent.com/skaji/remote-pbcopy-iterm2/master/misc/preferences.png)
+    ![preferences.png](https://raw.githubusercontent.com/skaji/remote-pbcopy-iterm2/master/misc/preferences.png)
 
 ## Usage
 
