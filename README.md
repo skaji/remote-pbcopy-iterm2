@@ -48,6 +48,9 @@ For OSC52
 * http://doda.b.sourceforge.jp/2011/12/15/tmux-set-clipboard/
 * http://qiita.com/kefir_/items/1f635fe66b778932e278
 * http://qiita.com/kefir_/items/515ed5264fce40dec522
+* https://chromium.googlesource.com/apps/libapps/+/HEAD/hterm/etc/osc52.vim
+* https://chromium.googlesource.com/apps/libapps/+/HEAD/hterm/etc/osc52.el
+* https://chromium.googlesource.com/apps/libapps/+/HEAD/hterm/etc/osc52.sh
 
 ## Author
 
