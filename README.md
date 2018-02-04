@@ -13,6 +13,7 @@ I prepared a simple perl script that is `pbcopy` for remote machines.
 1. First, make sure you use iTerm2 version 3.0.0 or later.
 2. Copy `pbcopy` to a directory where `$PATH` is set.
 
+       [local]  $ ssh remote
        [remote] $ wget https://raw.githubusercontent.com/skaji/remote-pbcopy-iterm2/master/pbcopy
        [remote] $ chmod +x pbcopy
        [remote] $ mv pbcopy /path/to/bin/
@@ -25,9 +26,10 @@ I prepared a simple perl script that is `pbcopy` for remote machines.
 
 Just like the normal `pbcopy`:
 
+    [local]  $ ssh remote
     [remote] $ data | pbcopy
-
-    [local] $ pbpaste
+    [remote] $ exit
+    [local]  $ pbpaste
     Sun Jan 18 20:28:03 JST 2015
 
 ## How about `pbpaste`?
