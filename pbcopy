@@ -67,7 +67,7 @@ pbcopy - remote pbcopy for iTerm2
 
     [remote] $ echo "copy to clipboard from remote!" | pbcopy
 
-    [local] $ pbcopy
+    [local] $ pbpaste
     copy to clipboard from remote!
 
 =head1 SEE ALSO
