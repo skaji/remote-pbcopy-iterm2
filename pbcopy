@@ -63,33 +63,12 @@ __END__
 
 pbcopy - remote pbcopy for iTerm2
 
-=head1 SYNOPSIS
-
-    [remote] $ echo "copy to clipboard from remote!" | pbcopy
-
-    [local] $ pbpaste
-    copy to clipboard from remote!
-
-=head1 SEE ALSO
-
-=over 4
-
-=item * http://doda.b.sourceforge.jp/2011/12/15/tmux-set-clipboard/
-
-=item * http://qiita.com/kefir_/items/1f635fe66b778932e278
-
-=item * http://qiita.com/kefir_/items/515ed5264fce40dec522
-
-=item * https://chromium.googlesource.com/apps/libapps/+/HEAD/hterm/etc/osc52.vim
-
-=item * https://chromium.googlesource.com/apps/libapps/+/HEAD/hterm/etc/osc52.el
-
-=item * https://chromium.googlesource.com/apps/libapps/+/HEAD/hterm/etc/osc52.sh
-
-=back
-
 =head1 AUTHOR
 
 Shoichi Kaji
+
+=head1 LICENSE
+
+MIT
 
 =cut
