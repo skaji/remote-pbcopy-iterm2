@@ -1,6 +1,6 @@
 # remote pbcopy for iTerm2
 
-`pbcopy` is a well-known macOS tool that copy data to the clipboard.
+`pbcopy` is a well-known macOS tool that copies data to the clipboard.
 It's very useful, but available only in your local machine, not in remote machines.
 
 Fortunately, with OSC52 escape sequence,
@@ -11,7 +11,7 @@ I prepared a simple tool that is `pbcopy` for remote machines.
 ## Install
 
 1. First, make sure you use iTerm2 version 3.0.0 or later.
-2. Copy `pbcopy` to a directory where `$PATH` is set.
+2. Copy a preferred `pbcopy` to a directory where `$PATH` is set.
 
        [local]  $ ssh remote
 
@@ -25,7 +25,7 @@ I prepared a simple tool that is `pbcopy` for remote machines.
        [remote] $ chmod +x pbcopy
        [remote] $ mv pbcopy /path/to/bin/
 
-3. Check "Allow clipboard access to terminal apps" in iTerm2 Preferences:
+3. Check "Applications in terminal may access clipboard" in iTerm2 Preferences:
 
     ![preferences.png](https://raw.githubusercontent.com/skaji/remote-pbcopy-iterm2/master/misc/preferences.png)
 
