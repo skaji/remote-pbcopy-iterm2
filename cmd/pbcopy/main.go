@@ -4,7 +4,6 @@ import (
 	"bytes"
 	"encoding/base64"
 	"fmt"
-	"io"
 	"io/ioutil"
 	"os"
 	"os/exec"
@@ -70,22 +69,17 @@ func chooseEsc() func(string) string {
 }
 
 func run() error {
-	var r io.Reader
-	switch len(os.Args) {
-	case 1:
-		r = os.Stdin
-	default:
+	var b []byte
+	var err error
+	if len(os.Args) == 1 {
+		b, err = ioutil.ReadAll(os.Stdin)
+	} else {
 		if os.Args[1] == "-h" || os.Args[1] == "--help" {
 			fmt.Print("Usage:\n  pbcopy FILE\n  some-command | pbcopy\n")
 			os.Exit(1)
 		}
-		var err error
-		r, err = os.Open(os.Args[1])
-		if err != nil {
-			return err
-		}
+		b, err = ioutil.ReadFile(os.Args[1])
 	}
-	b, err := ioutil.ReadAll(r)
 	if err != nil {
 		return err
 	}
