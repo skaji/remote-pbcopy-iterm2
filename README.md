@@ -1,12 +1,12 @@
 # remote pbcopy for iTerm2
 
-`pbcopy` is a well-known MacOSX tool that copy data to the clipboard.
+`pbcopy` is a well-known macOS tool that copy data to the clipboard.
 It's very useful, but available only in your local machine, not in remote machines.
 
 Fortunately, with OSC52 escape sequence,
 we can access the local machine clipboard via a remote machine.
 
-I prepared a simple perl script that is `pbcopy` for remote machines.
+I prepared a simple tool that is `pbcopy` for remote machines.
 
 ## Install
 
@@ -14,6 +14,13 @@ I prepared a simple perl script that is `pbcopy` for remote machines.
 2. Copy `pbcopy` to a directory where `$PATH` is set.
 
        [local]  $ ssh remote
+
+       # If you prefer a self-contained binary, then
+       [remote] $ wget -O pbcopy-linux-amd64.tar.gz https://github.com/skaji/remote-pbcopy-iterm2/releases/latest/download/pbcopy-linux-amd64.tar.gz
+       [remote] $ tar xf pbcopy-linux-amd64.tar.gz
+       [remote] $ mv pbcopy /path/to/bin/
+
+       # If you prefer a perl script, then
        [remote] $ wget https://raw.githubusercontent.com/skaji/remote-pbcopy-iterm2/master/pbcopy
        [remote] $ chmod +x pbcopy
        [remote] $ mv pbcopy /path/to/bin/
@@ -27,7 +34,7 @@ I prepared a simple perl script that is `pbcopy` for remote machines.
 Just like the normal `pbcopy`:
 
     [local]  $ ssh remote
-    [remote] $ data | pbcopy
+    [remote] $ date | pbcopy
     [remote] $ exit
     [local]  $ pbpaste
     Sun Jan 18 20:28:03 JST 2015
@@ -60,4 +67,4 @@ Shoichi Kaji
 
 ## License
 
-This software is licensed under the same terms as Perl.
+MIT
