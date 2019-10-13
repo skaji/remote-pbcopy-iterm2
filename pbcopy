@@ -39,15 +39,12 @@ length $input or exit;
 my $print = $normal; # default
 CHOOSE: {
     if (my $tmux_env = $ENV{TMUX}) {
-        # check tmux -CC
         (undef, my $pid) = split /,/, $tmux_env, 3;
         if ($pid) {
             my $ps = `ps -p $pid -o command= 2>/dev/null` || "";
             chomp $ps;
             (undef, my @option) = split /\s+/, $ps;
-            if (grep { $_ eq "-CC" } @option) {
-                last CHOOSE; # use the default, i.e, normal
-            }
+            last CHOOSE if grep { $_ eq "-CC" } @option;
         }
         $print = $tmux;
     } elsif ( ($ENV{TERM} || "") =~ /^screen/ ) {
