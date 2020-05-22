@@ -60,14 +60,14 @@ def run():
         b = sys.stdin.buffer.read()
     else:
         if sys.argv[1] == "-h" or sys.argv[1] == "--help":
-            print("Usage:\n  pbcopy FILE\n  some-command | pbcopy\n")
+            print("Usage:\n  pbcopy FILE\n  some-command | pbcopy\n", end="")
             sys.exit(1)
         b = open(sys.argv[1], "rb").read()
 
     b = b.rstrip(b"\n\r")
     if b:
         b64 = base64.b64encode(b).decode(encoding="UTF-8")
-        print(choose_esc()(b64))
+        print(choose_esc()(b64), end="")
 
 
 if __name__ == "__main__":
