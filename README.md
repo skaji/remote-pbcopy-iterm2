@@ -16,12 +16,17 @@ I prepared a simple tool that is `pbcopy` for remote machines.
        [local]  $ ssh remote
 
        # If you prefer a self-contained binary, then
-       [remote] $ wget -O pbcopy-linux-amd64.tar.gz https://github.com/skaji/remote-pbcopy-iterm2/releases/latest/download/pbcopy-linux-amd64.tar.gz
+       [remote] $ curl -fsSLo pbcopy-linux-amd64.tar.gz https://github.com/skaji/remote-pbcopy-iterm2/releases/latest/download/pbcopy-linux-amd64.tar.gz
        [remote] $ tar xf pbcopy-linux-amd64.tar.gz
        [remote] $ mv pbcopy /path/to/bin/
 
        # If you prefer a perl script, then
-       [remote] $ wget https://raw.githubusercontent.com/skaji/remote-pbcopy-iterm2/master/pbcopy
+       [remote] $ curl -fsSLo pbcopy https://raw.githubusercontent.com/skaji/remote-pbcopy-iterm2/master/pbcopy
+       [remote] $ chmod +x pbcopy
+       [remote] $ mv pbcopy /path/to/bin/
+
+       # If you prefer a python script, then
+       [remote] $ curl -fsSLo pbcopy https://raw.githubusercontent.com/skaji/remote-pbcopy-iterm2/master/pbcopy.py
        [remote] $ chmod +x pbcopy
        [remote] $ mv pbcopy /path/to/bin/
 
